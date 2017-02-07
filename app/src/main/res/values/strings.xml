@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Freescred</string>
+    <string name="text_trick">trick</string>
+    <string name="text_grab">grab</string>
+    <string name="level_prompt">Choisissez votre niveau</string>
+    <string-array name="level">
+        <item>Debutant</item>
+        <item>Intermediaire</item>
+        <item>Expert</item>
+    </string-array>
+</resources>
