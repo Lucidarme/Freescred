@@ -5,13 +5,21 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    >
+
+
+
+
+   >
 <LinearLayout
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.gangscred.freescred.MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="1"
+
+    >
+
 
     <LinearLayout
         android:id="@+id/linear_level"
@@ -21,13 +29,17 @@
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin">
+        android:paddingTop="@dimen/activity_vertical_margin"
+        >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/level_prompt"
             android:textSize="18sp"
             android:textStyle="bold"/>
+
+
+
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -57,7 +69,9 @@
         android:text ="Trick"
         android:textStyle="bold"
         android:textSize="25sp"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:background="#8AB5D9"/>
+
     <TextView
         android:id="@+id/text_trick"
         android:layout_width="match_parent"
@@ -77,19 +91,34 @@
         android:textStyle="bold"
         android:textSize="25sp"
         android:layout_marginTop="20dp"
+        android:background="#8AB5D9"
         />
-
 
 
     <TextView
         android:id="@+id/text_grab"
-        android:text="@string/text_grab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:text="@string/text_grab"
         android:layout_marginTop="20dp"
+        android:gravity="center"
         android:textSize="40sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:text="Send it, Grab it, Land it"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/slogan"
+        android:textColor="#000"
+        android:layout_marginTop="95dp"
+        android:gravity="center"
+        android:textStyle="italic"
+        android:textSize="25dp"
+       />
+
+
 
 
 </LinearLayout>

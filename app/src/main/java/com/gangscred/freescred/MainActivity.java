@@ -68,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
         tab_trick.add("misty");
 
 
-
         tab_grab.add("No grab");
         tab_grab.add("safety");
         tab_grab.add("mute");
@@ -91,45 +90,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 level=spinner_list_level.getSelectedItem().toString();
-                int i;
-                tab_final_grab.clear();
-                tab_final_trick.clear();
-                tab_final_rotation.clear();
-                if (spinner_list_level.getSelectedItem().toString().equals("Debutant")) {
-                    tab_final_trick.add(tab_trick.get(0));
-                    for (i=0;i<4;i++) {
-                        tab_final_grab.add(tab_grab.get(i));
-                    }
-                    for (i=0;i<3;i++){
-                    tab_final_rotation.add(tab_rotation.get(i));
-                    }
-
-
-                }
-                else {
-                    if (spinner_list_level.getSelectedItem().toString().equals("Intermediaire")) {
-                        for (i = 0; i < 8; i++) {
-                            tab_final_grab.add(tab_grab.get(i));
-                        }
-                        for (i = 1; i <5; i++) {
-                            tab_final_rotation.add(tab_rotation.get(i));
-                        }
-                        for (i = 0; i < 8; i++) {
-                            tab_final_trick.add(tab_trick.get(i));
-                        }
-                    }
-                    else {
-                        for (i = 0; i < 12; i++) {
-                            tab_final_grab.add(tab_grab.get(i));
-                        }
-                        for (i = 0; i < 8; i++) {
-                            tab_final_trick.add(tab_trick.get(i));
-                        }
-                        for (i = 1; i < 7; i++) {
-                            tab_final_rotation.add(tab_rotation.get(i));
-                        }
-                    }
-                }
             }
 
             @Override
@@ -158,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
         but_trick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String s1="";
+              /*  String s1="";
                 String s2="";
                 String s_final="";
                 String s_rotation = tab_final_rotation.get((int) (Math.random() * tab_final_rotation.size()));
@@ -173,9 +133,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 while (s2!=s_trick) {
-                    /*if (s1 != "0" && (s_trick.equals("front") || s_trick.equals("back"))) {
+                    if (s1 != "0" && (s_trick.equals("front") || s_trick.equals("back"))) {
                         s_trick = tab_final_trick.get((int) (Math.random() * tab_final_trick.size()));
-                    }*/
+                    }
                     if(s_trick=="front" || s_trick=="back"){
                         s2=s_trick;
                         s_final=s2;
@@ -200,6 +160,21 @@ public class MainActivity extends AppCompatActivity {
 
 
                 text_trick.setText(s_final);
+*/              if (spinner_list_level.getSelectedItem().toString().equals("Debutant")){
+                    Debutant Deb=new Debutant();
+                    text_trick.setText(Deb.s_final);
+                    }
+                else{
+                    if (spinner_list_level.getSelectedItem().toString().equals("Intermediaire")){
+                        Intermediaire Inter = new Intermediaire();
+                        text_trick.setText(Inter.s_final);
+                    }
+                    else{
+                        Expert Exp = new Expert();
+                        text_trick.setText(Exp.s_final);
+                    }
+
+                }
 
             }
         });
@@ -207,9 +182,7 @@ public class MainActivity extends AppCompatActivity {
         but_grab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String s1="";
-                /*s1 += tab_final_grab.get((int)(Math.random()*tab_final_grab.size()));
-               */
+               /* String s1="";
                 String s_grab = tab_final_grab.get((int) (Math.random() * tab_final_grab.size()));
                 while (s1!=s_grab) {
                     if (s_grab_memoire!=s_grab) {
@@ -219,7 +192,22 @@ public class MainActivity extends AppCompatActivity {
                         s_grab = tab_final_grab.get((int) (Math.random() * tab_final_grab.size()));
                     }
                 }
-                text_grab.setText(s1);
+                text_grab.setText(s1);*/
+                if (spinner_list_level.getSelectedItem().toString().equals("Debutant")){
+                    Debutant Deb=new Debutant();
+                    text_grab.setText(Deb.s_grab);
+                }
+                else{
+                    if (spinner_list_level.getSelectedItem().toString().equals("Intermediaire")){
+                        Intermediaire Inter = new Intermediaire();
+                        text_grab.setText(Inter.s_grab);
+                    }
+                    else{
+                        Expert Exp = new Expert();
+                        text_grab.setText(Exp.s_grab);
+                    }
+
+                }
             }
         });
     }
