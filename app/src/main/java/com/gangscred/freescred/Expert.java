@@ -8,6 +8,8 @@ import java.util.ArrayList;
 
 public class Expert {
     public String s_final = "";
+    private String s_grab_memoire="";
+    String sExcepExp="";
     public ArrayList<String> liste_trick_exp = new ArrayList<>();
     public ArrayList<String> liste_grab_exp = new ArrayList<>();
     public ArrayList<String> liste_rotation_exp = new ArrayList<>();
@@ -42,16 +44,25 @@ public class Expert {
         liste_grab_exp.add("dub nose");
         liste_grab_exp.add("Octo");
         liste_grab_exp.add("Screaming seamon");
-        String s1 = "";
-        String s2 = "";
 
+    }
+
+    //On crée le trick + rotation
+    public String Trick(){
         String s_rotation = liste_rotation_exp.get((int) (Math.random() * liste_rotation_exp.size()));
         String s_trick = liste_trick_exp.get((int) (Math.random() * liste_trick_exp.size()));
-        s1 = s_trick;
-        s2 =s_rotation;;
-        s_final = s1 + s2;
-        s_grab = liste_grab_exp.get((int) (Math.random() * liste_grab_exp.size()));
-
-
+        s_final=s_rotation+s_trick;
+        return(s_final);
+    }
+    public String Grab() {
+        while (sExcepExp != s_grab) {
+            if (s_grab_memoire != s_grab) {
+                sExcepExp = s_grab;
+                s_grab_memoire = sExcepExp;
+            } else {
+                s_grab = liste_grab_exp.get((int) (Math.random() * liste_grab_exp.size()));
+            }
+        }
+        return(s_grab);
     }
 }

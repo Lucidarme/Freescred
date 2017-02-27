@@ -20,67 +20,26 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    public ArrayList<String> tab_trick = new ArrayList<>();
-    public ArrayList<String> tab_rotation = new ArrayList<>();
-    public ArrayList<String> tab_grab = new ArrayList<>();
-    public ArrayList<String> tab_final_trick = new ArrayList<>();
-    public ArrayList<String> tab_final_rotation = new ArrayList<>();
-    public ArrayList<String> tab_final_grab = new ArrayList<>();
 
 
-
-    public String s_grab_memoire;
-    public  String s_rota_memoire;
-    public  String s_trick_memoire;
-    Button but_level;
-    public String level;
     Button but_trick;
     Button but_grab;
-    TextView text_level;
     TextView text_trick;
     TextView text_grab;
+    String s_grab_memoire="";
+    String s_trick_memoire="";
+    String s_rotation_memoire="";
     private Spinner spinner_list_level=null;
+
+    //On crée nos 3 objets contenant les listes des différents niveaux
+    Debutant Deb=new Debutant();
+    Intermediaire Inter = new Intermediaire();
+    Expert Exp = new Expert();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-        //On définit nos rotations,tricks et grabs
-        tab_rotation.add("0");
-        tab_rotation.add("180");
-        tab_rotation.add("360");
-        tab_rotation.add("540");
-        tab_rotation.add("720");
-        tab_rotation.add("1080");
-        tab_rotation.add("1440");
-
-
-
-        tab_trick.add("");
-        tab_trick.add("switch");
-        tab_trick.add("back");
-        tab_trick.add("front");
-        tab_trick.add("flat");
-        tab_trick.add("bio");
-        tab_trick.add("cork");
-        tab_trick.add("misty");
-
-
-        tab_grab.add("No grab");
-        tab_grab.add("safety");
-        tab_grab.add("mute");
-        tab_grab.add("Kozak");
-        tab_grab.add("japan");
-        tab_grab.add("double japan");
-        tab_grab.add("tail");
-        tab_grab.add("blunt");
-        tab_grab.add("nose");
-        tab_grab.add("truck driver");
-        tab_grab.add("dub nose");
-        tab_grab.add("Octo");
-        tab_grab.add("Screaming seamon");
 
 
 
@@ -89,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         spinner_list_level.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                level=spinner_list_level.getSelectedItem().toString();
+
             }
 
             @Override
@@ -98,21 +57,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-
-
-
-
         //On définit nos boutons, text
 
         but_trick = (Button) findViewById(R.id.trick);
         but_grab = (Button) findViewById(R.id.grab);
         text_trick = (TextView) findViewById(R.id.text_trick);
         text_grab = (TextView) findViewById(R.id.text_grab);
-
-
 
         //évènements
         but_trick.setOnClickListener(new View.OnClickListener() {
@@ -157,21 +107,22 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 }
-
-
-                text_trick.setText(s_final);
-*/              if (spinner_list_level.getSelectedItem().toString().equals("Debutant")){
-                    Debutant Deb=new Debutant();
-                    text_trick.setText(Deb.s_final);
+           text_trick.setText(s_final); */
+                String trick_Deb="";
+                String trick_Inter="";
+                String trick_Exp="";
+                if (spinner_list_level.getSelectedItem().toString().equals("Debutant")){
+                    trick_Deb=Deb.Trick();
+                    text_trick.setText(trick_Deb);
                     }
                 else{
                     if (spinner_list_level.getSelectedItem().toString().equals("Intermediaire")){
-                        Intermediaire Inter = new Intermediaire();
-                        text_trick.setText(Inter.s_final);
+                        trick_Inter=Inter.Trick();
+                        text_trick.setText(trick_Inter);
                     }
                     else{
-                        Expert Exp = new Expert();
-                        text_trick.setText(Exp.s_final);
+                        trick_Exp=Exp.Trick();
+                        text_trick.setText(trick_Exp);
                     }
 
                 }
@@ -182,32 +133,28 @@ public class MainActivity extends AppCompatActivity {
         but_grab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               /* String s1="";
-                String s_grab = tab_final_grab.get((int) (Math.random() * tab_final_grab.size()));
-                while (s1!=s_grab) {
-                    if (s_grab_memoire!=s_grab) {
-                        s1 = s_grab;
-                        s_grab_memoire = s1;
-                    } else {
-                        s_grab = tab_final_grab.get((int) (Math.random() * tab_final_grab.size()));
-                    }
-                }
-                text_grab.setText(s1);*/
+                String grab_Deb;
+                String grab_Inter;
+                String grab_Exp;
                 if (spinner_list_level.getSelectedItem().toString().equals("Debutant")){
-                    Debutant Deb=new Debutant();
-                    text_grab.setText(Deb.s_grab);
+                   //DEBUTANT
+                    grab_Deb=Deb.Grab();
+                    text_grab.setText(grab_Deb);
                 }
                 else{
                     if (spinner_list_level.getSelectedItem().toString().equals("Intermediaire")){
-                        Intermediaire Inter = new Intermediaire();
-                        text_grab.setText(Inter.s_grab);
+                        //INTERMEDIAIRE
+                        grab_Inter=Inter.Grab();
+                        text_grab.setText(grab_Inter);
                     }
                     else{
-                        Expert Exp = new Expert();
-                        text_grab.setText(Exp.s_grab);
+                       //EXPERT
+                        grab_Exp=Exp.Grab();
+                        text_grab.setText(grab_Exp);
                     }
 
                 }
+
             }
         });
     }

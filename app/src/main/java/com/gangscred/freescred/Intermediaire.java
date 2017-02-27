@@ -7,8 +7,9 @@ import java.util.ArrayList;
  */
 
 public class Intermediaire {
-    public String s_final="";
     public String s_grab;
+    public String s_final;
+    private String s_grab_memoire="";
     public ArrayList<String> liste_trick_inter = new ArrayList<>();
     public ArrayList<String> liste_grab_inter = new ArrayList<>();
     public ArrayList<String> liste_rotation_inter = new ArrayList<>();
@@ -30,20 +31,32 @@ public class Intermediaire {
         liste_grab_inter.add("tail");
         liste_grab_inter.add("blunt");
         liste_grab_inter.add("nose");
-        String s1="";
-        String s2="";
-
-        String s_rotation = liste_rotation_inter.get((int) (Math.random() * liste_rotation_inter.size()));
-        String s_trick = liste_trick_inter.get((int) (Math.random() * liste_trick_inter.size()));
-        s1=s_rotation;
-        s2=s_trick;
-        s_final=s1+s2;
-        String s3="";
-        s_grab = liste_grab_inter.get((int) (Math.random() * liste_grab_inter.size()));
-
-
 
     }
+    //On crée le trick + rotation
+    public String Trick(){
+        String s_rotation = liste_rotation_inter.get((int) (Math.random() * liste_rotation_inter.size()));
+        String s_trick = liste_trick_inter.get((int) (Math.random() * liste_trick_inter.size()));
+        s_final=s_rotation+s_trick;
+        return(s_final);
+    }
+
+        public String Grab(){
+
+            String sExcepInter="";
+            while (sExcepInter!=s_grab) {
+                if (s_grab_memoire!=s_grab) {
+                    sExcepInter = s_grab;
+                    s_grab_memoire = sExcepInter;
+                } else {
+                    s_grab = liste_grab_inter.get((int) (Math.random() * liste_grab_inter.size()));
+                }
+            }
+            return s_grab;
+        }
+
+
+
 }
 
 
