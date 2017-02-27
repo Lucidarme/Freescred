@@ -68,46 +68,7 @@ public class MainActivity extends AppCompatActivity {
         but_trick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              /*  String s1="";
-                String s2="";
-                String s_final="";
-                String s_rotation = tab_final_rotation.get((int) (Math.random() * tab_final_rotation.size()));
-                String s_trick = tab_final_trick.get((int) (Math.random() * tab_final_trick.size()));
-                while (s1!=s_rotation) {
-                    if (s_rota_memoire!=s_rotation) {
-                        s1 = s_rotation;
-                        s_rota_memoire = s1;
-                        s_final=s1;
-                    } else {
-                        s_rotation = tab_final_rotation.get((int) (Math.random() * tab_final_rotation.size()));
-                    }
-                }
-                while (s2!=s_trick) {
-                    if (s1 != "0" && (s_trick.equals("front") || s_trick.equals("back"))) {
-                        s_trick = tab_final_trick.get((int) (Math.random() * tab_final_trick.size()));
-                    }
-                    if(s_trick=="front" || s_trick=="back"){
-                        s2=s_trick;
-                        s_final=s2;
-                    }
 
-                    else {
-                        if((s_rotation=="180") && (s_trick=="cork" || s_trick=="misty" || s_trick=="flat" || s_trick=="bio")){
-                            s_trick=tab_final_trick.get((int) (Math.random()*tab_final_trick.size()));
-                        }
-                        else{
-                            if (s_trick_memoire != s_trick) {
-                                s2 = s_trick;
-                                s_trick_memoire = s2;
-                                s_final=s2 + " " + s_final;
-                            } else {
-                                s_trick = tab_final_trick.get((int) (Math.random() * tab_final_trick.size()));
-                            }
-                        }
-
-                    }
-                }
-           text_trick.setText(s_final); */
                 String trick_Deb="";
                 String trick_Inter="";
                 String trick_Exp="";
