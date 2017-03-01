@@ -3,6 +3,37 @@
     <string name="text_trick">trick</string>
     <string name="text_grab">grab</string>
     <string name="level_prompt">Choisissez votre niveau</string>
+    <!-- ROTATION -->
+    <string name="rot_0">0</string>
+    <string name="rot_180">180</string>
+    <string name="rot_360">360</string>
+    <string name="rot_540">540</string>
+    <string name="rot_720">720</string>
+    <string name="rot_900">900</string>
+    <string name="rot_1080">1080</string>
+    <!-- GRAB -->
+    <string name="grab_nograb">nograb</string>
+    <string name="grab_safety">safety</string>
+    <string name="grab_mute">mute</string>
+    <string name="grab_japan">japan</string>
+    <string name="grab_cossak">cossak</string>
+    <string name="grab_tail">tail</string>
+    <string name="grab_doublejapan">double japan</string>
+    <string name="grab_blunt">blunt</string>
+    <string name="grab_octo">octo</string>
+    <string name="grab_truck">truck</string>
+    <string name="grab_screaminseaman">screamin seaman</string>
+    <string name="grab_nose">nose</string>
+    <string name="grab_leadtail">lead tail</string>
+    <string name="grab_dubnose">dubnose</string>
+    <!-- TRICKS -->
+    <string name="trick_back">back</string>
+    <string name="trick_front">front</string>
+    <string name="trick_misty">misty</string>
+    <string name="trick_rodeo">rodeo</string>
+    <string name="trick_flat">flat</string>
+    <string name="trick_cork">cork</string>
+    <string name="trick_droit"></string>
     <string-array name="level">
         <item>Debutant</item>
         <item>Intermediaire</item>

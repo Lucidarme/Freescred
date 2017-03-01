@@ -2,6 +2,8 @@ package com.gangscred.freescred;
 
 
 
+import android.content.Context;
+import android.support.v7.app.AppCompatActivity;
 import android.text.method.HideReturnsTransformationMethod;
 
 import java.util.ArrayList;
@@ -10,7 +12,8 @@ import java.util.ArrayList;
  * Created by larnicol on 25/02/17.
  */
 
-public final class Debutant{
+
+public class Debutant{
     public String s_grab;
     private String s_grab_memoire="";
     private String s_rota_memoire="";
@@ -18,16 +21,40 @@ public final class Debutant{
     public  ArrayList<String> liste_trick_deb= new ArrayList<>();
     public ArrayList<String> liste_grab_deb= new ArrayList<>();
     public ArrayList<String> liste_rotation_deb= new ArrayList<>();
-    public Debutant() {
+    private Context context;
+    String trick_droit;
+
+    String rot_0;
+    String rot_180;
+    String rot_360;
+
+    String grab_mute;
+    String grab_japan;
+    String grab_cossak;
+    String grab_safety;
+
+
+    public Debutant(Context context) {
+        this.context=context;
+        String rot_0=context.getResources().getString(R.string.rot_0);
+        String rot_180=context.getResources().getString(R.string.rot_180);
+        String rot_360=context.getResources().getString(R.string.rot_360);
+        String grab_nograb=context.getResources().getString(R.string.grab_nograb);
+        String grab_mute=context.getResources().getString(R.string.grab_mute);
+        String grab_japan=context.getResources().getString(R.string.grab_japan);
+        String grab_cossak=context.getResources().getString(R.string.grab_cossak);
+        String grab_safety=context.getResources().getString(R.string.grab_safety);
+
+        // private String grab_cossak=getString(R.string.grab_cossak);
         liste_trick_deb.add("");
-        liste_rotation_deb.add("180");
-        liste_rotation_deb.add("360");
-        liste_rotation_deb.add("0");
-        liste_grab_deb.add("No grab");
-        liste_grab_deb.add("safety");
-        liste_grab_deb.add("mute");
-        liste_grab_deb.add("Kozak");
-        liste_grab_deb.add("japan");
+        liste_rotation_deb.add(rot_0);
+        liste_rotation_deb.add(rot_180);
+        liste_rotation_deb.add(rot_360);
+
+        liste_grab_deb.add(grab_safety);
+        liste_grab_deb.add(grab_mute);
+        liste_grab_deb.add(grab_japan);
+
 
 
     }
@@ -51,13 +78,13 @@ public final class Debutant{
             if (s1 != "0" && (s_trick.equals("front") || s_trick.equals("back"))) {
                 s_trick = liste_trick_deb.get((int) (Math.random() * liste_trick_deb.size()));
             }
-            if(s_trick=="front" || s_trick=="back"){
+            if(s_trick.equals("front") || s_trick.equals("back")){
                 s2=s_trick;
                 s_final=s2;
             }
 
             else {
-                if((s_rotation=="180") && (s_trick=="cork" || s_trick=="misty" || s_trick=="flat" || s_trick=="bio")){
+                if((s_rotation.equals("180")) && (s_trick=="cork" || s_trick.equals("misty") || s_trick.equals("flat") || s_trick.equals("bio"))){
                     s_trick=liste_trick_deb.get((int) (Math.random()*liste_trick_deb.size()));
                 }
                 else{

@@ -26,23 +26,21 @@ public class MainActivity extends AppCompatActivity {
     Button but_grab;
     TextView text_trick;
     TextView text_grab;
-    String s_grab_memoire="";
-    String s_trick_memoire="";
-    String s_rotation_memoire="";
     private Spinner spinner_list_level=null;
 
     //On crée nos 3 objets contenant les listes des différents niveaux
-    Debutant Deb=new Debutant();
-    Intermediaire Inter = new Intermediaire();
-    Expert Exp = new Expert();
+    Debutant Deb;
+    Intermediaire Inter;
+    Expert Exp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
+        Deb= new Debutant(this);
+        Inter=new Intermediaire(this);
+        Exp=new Expert(this);
+        //Declaration du spinner level.
         spinner_list_level=(Spinner) findViewById(R.id.spinner_level);
        // level= spinner_list_level.getSelectedItem().toString();
         spinner_list_level.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

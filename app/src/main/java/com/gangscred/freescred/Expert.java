@@ -1,5 +1,7 @@
 package com.gangscred.freescred;
 
+import android.content.Context;
+
 import java.util.ArrayList;
 
 /**
@@ -14,36 +16,107 @@ public class Expert {
     public ArrayList<String> liste_trick_exp = new ArrayList<>();
     public ArrayList<String> liste_grab_exp = new ArrayList<>();
     public ArrayList<String> liste_rotation_exp = new ArrayList<>();
-    public Expert() {
-        liste_trick_exp.add("");
-        liste_trick_exp.add("switch");
-        liste_trick_exp.add("back");
-        liste_trick_exp.add("front");
-        liste_trick_exp.add("flat");
-        liste_trick_exp.add("bio");
-        liste_trick_exp.add("cork");
-        liste_trick_exp.add("misty");
+    private Context context;
 
-        liste_rotation_exp.add("180");
-        liste_rotation_exp.add("360");
-        liste_rotation_exp.add("540");
-        liste_rotation_exp.add("720");
-        liste_rotation_exp.add("900");
-        liste_rotation_exp.add("1080");
+    String trick_front;
+    String trick_misty;
+    String trick_back;
+    String trick_cork;
+    String trick_rodeo;
+    String trick_droit;
+    String trick_flat;
 
-        liste_grab_exp.add("No grab");
-        liste_grab_exp.add("safety");
-        liste_grab_exp.add("mute");
-        liste_grab_exp.add("Kozak");
-        liste_grab_exp.add("japan");
-        liste_grab_exp.add("double japan");
-        liste_grab_exp.add("tail");
-        liste_grab_exp.add("blunt");
-        liste_grab_exp.add("nose");
-        liste_grab_exp.add("truck driver");
-        liste_grab_exp.add("dub nose");
-        liste_grab_exp.add("Octo");
-        liste_grab_exp.add("Screaming seamon");
+    String rot_0;
+    String rot_180;
+    String rot_360;
+    String rot_540;
+    String rot_720;
+    String rot_900;
+    String rot_1080;
+
+    String grab_mute;
+    String grab_japan;
+    String grab_cossak;
+    String grab_safety;
+    String grab_doublejap;
+    String grab_tail;
+    String grab_blunt;
+    String grab_nose;
+    String grab_truck;
+    String grab_screamin;
+    String grab_octo;
+    String grab_leadtail;
+    String grab_dubnose;
+
+
+
+
+
+    public Expert(Context context) {
+        this.context=context;
+        String rot_0=context.getResources().getString(R.string.rot_0);
+        String rot_180=context.getResources().getString(R.string.rot_180);
+        String rot_360=context.getResources().getString(R.string.rot_360);
+        String rot_540=context.getResources().getString(R.string.rot_540);
+        String rot_720=context.getResources().getString(R.string.rot_720);
+        String rot_900=context.getResources().getString(R.string.rot_900);
+        String rot_1080=context.getResources().getString(R.string.rot_1080);
+
+        String grab_mute=context.getResources().getString(R.string.grab_mute);
+        String grab_japan=context.getResources().getString(R.string.grab_japan);
+        String grab_cossak=context.getResources().getString(R.string.grab_cossak);
+        String grab_safety=context.getResources().getString(R.string.grab_safety);
+        String grab_doublejap=context.getResources().getString(R.string.grab_doublejapan);
+        String grab_tail=context.getResources().getString(R.string.grab_tail);
+        String grab_blunt=context.getResources().getString(R.string.grab_blunt);
+        String grab_nose=context.getResources().getString(R.string.grab_nose);
+        String grab_truck=context.getResources().getString(R.string.grab_truck);
+        String grab_screamin=context.getResources().getString(R.string.grab_screaminseaman);
+        String grab_octo=context.getResources().getString(R.string.grab_octo);
+        String grab_leadtail=context.getResources().getString(R.string.grab_leadtail);
+        String grab_dubnose=context.getResources().getString(R.string.grab_dubnose);
+
+        String trick_front=context.getResources().getString(R.string.trick_front);
+        String trick_misty=context.getResources().getString(R.string.trick_misty);
+        String trick_back=context.getResources().getString(R.string.trick_back);
+        String trick_cork=context.getResources().getString(R.string.trick_cork);
+        String trick_rodeo=context.getResources().getString(R.string.trick_rodeo);
+        String trick_droit=context.getResources().getString(R.string.trick_droit);
+        String trick_flat=context.getResources().getString(R.string.trick_flat);
+
+        liste_trick_exp.add(trick_droit);
+        liste_trick_exp.add(trick_back);
+        liste_trick_exp.add(trick_front);
+        liste_trick_exp.add(trick_flat);
+        liste_trick_exp.add(trick_rodeo);
+        liste_trick_exp.add(trick_cork);
+        liste_trick_exp.add(trick_misty);
+
+        liste_rotation_exp.add(rot_0);
+        liste_rotation_exp.add(rot_180);
+        liste_rotation_exp.add(rot_360);
+        liste_rotation_exp.add(rot_540);
+        liste_rotation_exp.add(rot_720);
+        liste_rotation_exp.add(rot_900);
+        liste_rotation_exp.add(rot_1080);
+
+        liste_grab_exp.add(grab_cossak);
+        liste_grab_exp.add(grab_japan);
+        liste_grab_exp.add(grab_safety);
+        liste_grab_exp.add(grab_mute);
+        liste_grab_exp.add(grab_doublejap);
+        liste_grab_exp.add(grab_tail);
+        liste_grab_exp.add(grab_blunt);
+        liste_grab_exp.add(grab_nose);
+        liste_grab_exp.add(grab_truck);
+        liste_grab_exp.add(grab_dubnose);
+        liste_grab_exp.add(grab_octo);
+        liste_grab_exp.add(grab_screamin);
+        liste_grab_exp.add(grab_leadtail);
+
+
+
+
 
     }
 
@@ -64,16 +137,16 @@ public class Expert {
             }
         }
         while (s2!=s_trick) {
-            if (s1 != "0" && (s_trick.equals("front") || s_trick.equals("back"))) {
+            if (s1 !=rot_0 && (s_trick.equals(trick_front) || s_trick.equals(trick_back))) {
                 s_trick = liste_trick_exp.get((int) (Math.random() * liste_trick_exp.size()));
             }
-            if(s_trick=="front" || s_trick=="back"){
+            if(s_trick==trick_front || s_trick==trick_back){
                 s2=s_trick;
                 s_final=s2;
             }
 
             else {
-                if((s_rotation=="180") && (s_trick=="cork" || s_trick=="misty" || s_trick=="flat" || s_trick=="bio")){
+                if((s_rotation.equals(rot_180)) && (s_trick==trick_cork || s_trick==trick_misty || s_trick==trick_flat || s_trick==trick_rodeo)){
                     s_trick=liste_trick_exp.get((int) (Math.random()*liste_trick_exp.size()));
                 }
                 else{
