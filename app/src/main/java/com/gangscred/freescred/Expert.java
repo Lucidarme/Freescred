@@ -54,35 +54,35 @@ public class Expert {
 
     public Expert(Context context) {
         this.context=context;
-        String rot_0=context.getResources().getString(R.string.rot_0);
-        String rot_180=context.getResources().getString(R.string.rot_180);
-        String rot_360=context.getResources().getString(R.string.rot_360);
-        String rot_540=context.getResources().getString(R.string.rot_540);
-        String rot_720=context.getResources().getString(R.string.rot_720);
-        String rot_900=context.getResources().getString(R.string.rot_900);
-        String rot_1080=context.getResources().getString(R.string.rot_1080);
+        rot_0=context.getResources().getString(R.string.rot_0);
+        rot_180=context.getResources().getString(R.string.rot_180);
+        rot_360=context.getResources().getString(R.string.rot_360);
+        rot_540=context.getResources().getString(R.string.rot_540);
+        rot_720=context.getResources().getString(R.string.rot_720);
+        rot_900=context.getResources().getString(R.string.rot_900);
+        rot_1080=context.getResources().getString(R.string.rot_1080);
 
-        String grab_mute=context.getResources().getString(R.string.grab_mute);
-        String grab_japan=context.getResources().getString(R.string.grab_japan);
-        String grab_cossak=context.getResources().getString(R.string.grab_cossak);
-        String grab_safety=context.getResources().getString(R.string.grab_safety);
-        String grab_doublejap=context.getResources().getString(R.string.grab_doublejapan);
-        String grab_tail=context.getResources().getString(R.string.grab_tail);
-        String grab_blunt=context.getResources().getString(R.string.grab_blunt);
-        String grab_nose=context.getResources().getString(R.string.grab_nose);
-        String grab_truck=context.getResources().getString(R.string.grab_truck);
-        String grab_screamin=context.getResources().getString(R.string.grab_screaminseaman);
-        String grab_octo=context.getResources().getString(R.string.grab_octo);
-        String grab_leadtail=context.getResources().getString(R.string.grab_leadtail);
-        String grab_dubnose=context.getResources().getString(R.string.grab_dubnose);
+        grab_mute=context.getResources().getString(R.string.grab_mute);
+        grab_japan=context.getResources().getString(R.string.grab_japan);
+        grab_cossak=context.getResources().getString(R.string.grab_cossak);
+        grab_safety=context.getResources().getString(R.string.grab_safety);
+        grab_doublejap=context.getResources().getString(R.string.grab_doublejapan);
+        grab_tail=context.getResources().getString(R.string.grab_tail);
+        grab_blunt=context.getResources().getString(R.string.grab_blunt);
+        grab_nose=context.getResources().getString(R.string.grab_nose);
+        grab_truck=context.getResources().getString(R.string.grab_truck);
+        grab_screamin=context.getResources().getString(R.string.grab_screaminseaman);
+        grab_octo=context.getResources().getString(R.string.grab_octo);
+        grab_leadtail=context.getResources().getString(R.string.grab_leadtail);
+        grab_dubnose=context.getResources().getString(R.string.grab_dubnose);
 
-        String trick_front=context.getResources().getString(R.string.trick_front);
-        String trick_misty=context.getResources().getString(R.string.trick_misty);
-        String trick_back=context.getResources().getString(R.string.trick_back);
-        String trick_cork=context.getResources().getString(R.string.trick_cork);
-        String trick_rodeo=context.getResources().getString(R.string.trick_rodeo);
-        String trick_droit=context.getResources().getString(R.string.trick_droit);
-        String trick_flat=context.getResources().getString(R.string.trick_flat);
+        trick_front=context.getResources().getString(R.string.trick_front);
+        trick_misty=context.getResources().getString(R.string.trick_misty);
+        trick_back=context.getResources().getString(R.string.trick_back);
+        trick_cork=context.getResources().getString(R.string.trick_cork);
+        trick_rodeo=context.getResources().getString(R.string.trick_rodeo);
+        trick_droit=context.getResources().getString(R.string.trick_droit);
+        trick_flat=context.getResources().getString(R.string.trick_flat);
 
         liste_trick_exp.add(trick_droit);
         liste_trick_exp.add(trick_back);
@@ -146,7 +146,7 @@ public class Expert {
             }
 
             else {
-                if((s_rotation.equals(rot_180)) && (s_trick==trick_cork || s_trick==trick_misty || s_trick==trick_flat || s_trick==trick_rodeo)){
+                if((s_rotation.equals(rot_180) || s_rotation.equals(rot_0)) && (s_trick==trick_cork || s_trick==trick_misty || s_trick==trick_flat || s_trick==trick_rodeo)){
                     s_trick=liste_trick_exp.get((int) (Math.random()*liste_trick_exp.size()));
                 }
                 else{

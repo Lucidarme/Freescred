@@ -5,12 +5,14 @@
 
     <Button
         android:text="Play"
+        android:layout_marginTop="150dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/play" />
 
     <Button
-        android:text="Level"
+        android:text="Players"
+        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/level" />
