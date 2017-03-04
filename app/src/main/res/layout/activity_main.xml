@@ -8,14 +8,12 @@
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:spinnerMode="dialog"
         android:id="@+id/spinner_level"
         android:entries="@array/level"
         android:prompt="@string/level_prompt"
         android:layout_marginTop="10dp"
-
-
         />
-
     <android.support.design.widget.TabLayout
         android:id="@+id/sliding_tabs"
         android:layout_width="match_parent"
@@ -28,6 +26,8 @@
         android:layout_height="0px"
         android:layout_weight="1"
         android:background="@android:color/white" />
+
+
 
 </LinearLayout>
 
@@ -76,9 +76,7 @@
             android:entries="@array/level"
             android:prompt="@string/level_prompt"
             android:layout_marginTop="10dp"
-
-
-        />
+       />
     </LinearLayout>
 
     <View

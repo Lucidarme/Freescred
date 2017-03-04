@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.widget.Spinner;
 
 /**
  * Created by larnicol on 03/03/17.
@@ -14,9 +15,12 @@ public class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
     private String tabTitles[] = new String[] { "KICK", "RAIL"};
     private Context context;
 
+
+
     public SampleFragmentPagerAdapter(FragmentManager fm, Context context) {
         super(fm);
         this.context = context;
+
     }
 
     @Override
@@ -28,6 +32,7 @@ public class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         return PageFragment.newInstance(position + 1);
     }
+
 
     @Override
     public CharSequence getPageTitle(int position) {

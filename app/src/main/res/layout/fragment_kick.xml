@@ -3,9 +3,6 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-
-
 <Button
 android:id="@+id/trick"
 android:layout_width="match_parent"
@@ -13,7 +10,7 @@ android:layout_height="60dp"
 android:text ="Trick"
 android:textStyle="bold"
 android:textSize="25sp"
-android:layout_marginTop="80dp"
+android:layout_marginTop="35dp"
 android:background="#8AB5D9"/>
 
 <TextView
@@ -49,6 +46,9 @@ android:gravity="center"
 android:textSize="40sp"
 android:textStyle="bold"
     />
+
+
+
 
 
 </LinearLayout>

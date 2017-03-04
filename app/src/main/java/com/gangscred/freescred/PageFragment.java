@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 /**
@@ -32,6 +33,7 @@ public class PageFragment extends Fragment{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
@@ -52,7 +54,7 @@ public class PageFragment extends Fragment{
             public void onClick(View v) {
 
 
-                /*if (spinner_list_level.getSelectedItem().toString().equals("Debutant")){
+              /*  if (spinner_list_level.getSelectedItem().toString().equals("Debutant")){
                 String trick_Deb=Deb.Trick();
                 text_trick.setText(Deb.Trick());
                 }
