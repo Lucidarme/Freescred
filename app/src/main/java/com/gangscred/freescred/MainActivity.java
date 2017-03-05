@@ -49,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
     }
 
+    public Spinner getSpinnerLevel(){
+        return spinner_list_level;
+    }
 
  /*   Button but_trick;
     Button but_grab;
