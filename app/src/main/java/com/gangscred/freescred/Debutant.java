@@ -8,6 +8,8 @@ import android.text.method.HideReturnsTransformationMethod;
 
 import java.util.ArrayList;
 
+
+
 /**
  * Created by larnicol on 25/02/17.
  */
@@ -22,7 +24,7 @@ public class Debutant{
     public ArrayList<String> liste_grab_deb= new ArrayList<>();
     public ArrayList<String> liste_rotation_deb= new ArrayList<>();
     private Context context;
-    String trick_droit;
+
 
     String rot_0;
     String rot_180;
@@ -32,18 +34,19 @@ public class Debutant{
     String grab_japan;
     String grab_cossak;
     String grab_safety;
+    String grab_nograb;
 
 
     public Debutant(Context context) {
         this.context=context;
-        String rot_0=context.getResources().getString(R.string.rot_0);
-        String rot_180=context.getResources().getString(R.string.rot_180);
-        String rot_360=context.getResources().getString(R.string.rot_360);
-        String grab_nograb=context.getResources().getString(R.string.grab_nograb);
-        String grab_mute=context.getResources().getString(R.string.grab_mute);
-        String grab_japan=context.getResources().getString(R.string.grab_japan);
-        String grab_cossak=context.getResources().getString(R.string.grab_cossak);
-        String grab_safety=context.getResources().getString(R.string.grab_safety);
+        rot_0=context.getResources().getString(R.string.rot_0);
+        rot_180=context.getResources().getString(R.string.rot_180);
+        rot_360=context.getResources().getString(R.string.rot_360);
+        grab_nograb=context.getResources().getString(R.string.grab_nograb);
+        grab_mute=context.getResources().getString(R.string.grab_mute);
+        grab_japan=context.getResources().getString(R.string.grab_japan);
+        grab_cossak=context.getResources().getString(R.string.grab_cossak);
+        grab_safety=context.getResources().getString(R.string.grab_safety);
 
         // private String grab_cossak=getString(R.string.grab_cossak);
         liste_trick_deb.add("");
