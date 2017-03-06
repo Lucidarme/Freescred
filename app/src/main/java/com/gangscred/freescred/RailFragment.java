@@ -17,6 +17,10 @@ public class RailFragment extends Fragment {
     Debutant Deb;
     Intermediaire Inter;
     Expert Exp;
+    Button but_rail;
+    Button but_wayrotation;
+    TextView text_rail;
+    TextView text_wayrotation;
 
     MainActivity myActivity = null;
 
@@ -44,6 +48,40 @@ public class RailFragment extends Fragment {
         Deb=new Debutant(this.getContext());
         Inter=new Intermediaire(this.getContext());
         Exp=new Expert(this.getContext());
+
+        but_rail = (Button) view.findViewById(R.id.rail);
+        text_rail = (TextView) view.findViewById(R.id.text_rail);
+        but_wayrotation=(Button) view.findViewById(R.id.way_rotation);
+        text_wayrotation= (TextView) view.findViewById(R.id.text_wayrotation);
+
+
+        but_rail.setOnClickListener(new View.OnClickListener() {
+            String rail_Deb;
+            String rail_Inter;
+            String rail_Exp;
+            @Override
+            public void onClick(View v) {
+
+
+                Spinner spinner_list_level = myActivity.getSpinnerLevel();
+                if (spinner_list_level.getSelectedItem().toString().equals("Debutant")){
+                    rail_Deb=Deb.Rail();
+                    text_rail.setText(rail_Deb);
+                }
+                else{
+                    if (spinner_list_level.getSelectedItem().toString().equals("Intermediaire")){
+                        rail_Inter=Inter.Rail();
+                        text_rail.setText(rail_Inter);
+                    }
+                    else{
+                        rail_Exp=Exp.Rail();
+                        text_rail.setText(rail_Exp);
+                    }
+
+                }
+
+            }
+        });
 
         return view;
 

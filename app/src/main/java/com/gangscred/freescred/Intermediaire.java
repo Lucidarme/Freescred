@@ -18,6 +18,9 @@ public class Intermediaire{
     public ArrayList<String> liste_trick_inter = new ArrayList<>();
     public ArrayList<String> liste_grab_inter = new ArrayList<>();
     public ArrayList<String> liste_rotation_inter = new ArrayList<>();
+    public  ArrayList<String>rail_on= new ArrayList<>();
+    public ArrayList<String>rail_in= new ArrayList<>();
+    public ArrayList<String>rail_out= new ArrayList<>();
     private Context context;
 
     String trick_front;
@@ -42,8 +45,40 @@ public class Intermediaire{
     String grab_tail;
     String grab_blunt;
     String grab_nose;
+
+
+    String in_50_50;
+    String in_onefoot;
+    String in_90;
+    String in_27;
+    String in_180;
+    String in_45;
+    String in_63;
+
+    String out_switch;
+    String out_forward;
+    String out_27;
+    String out_45;
+    String out_63;
+    String out_misty;
+
+    String on_frontswap;
+    String on_backswap;
+    String on_frontswap360;
+    String on_backswap360;
     public Intermediaire(Context context){
         this.context=context;
+        //RAIL
+        in_90=context.getResources().getString(R.string.in_90);
+        in_180=context.getResources().getString(R.string.in_180);
+        in_27=context.getResources().getString(R.string.in_27);
+
+        out_27=context.getResources().getString(R.string.out_27);
+        out_45=context.getResources().getString(R.string.out_45);
+        out_switch=context.getResources().getString(R.string.out_switch);
+        out_forward=context.getResources().getString(R.string.out_forward);
+        on_frontswap=context.getResources().getString(R.string.on_frontswap);
+        on_backswap=context.getResources().getString(R.string.on_backswap);
         //ROTATIONS
         rot_0=context.getResources().getString(R.string.rot_0);
         rot_180=context.getResources().getString(R.string.rot_180);
@@ -67,6 +102,8 @@ public class Intermediaire{
         trick_rodeo=context.getResources().getString(R.string.trick_rodeo);
         trick_droit=context.getResources().getString(R.string.trick_droit);
         trick_flat=context.getResources().getString(R.string.trick_flat);
+
+
 
 
         liste_trick_inter.add(trick_droit);
@@ -93,6 +130,23 @@ public class Intermediaire{
         liste_grab_inter.add(grab_tail);
         liste_grab_inter.add(grab_blunt);
         liste_grab_inter.add(grab_nose);
+
+        rail_in.add(in_90);
+        rail_in.add(in_27);
+        rail_in.add(in_45);
+
+        rail_out.add(out_switch);
+        rail_out.add(out_forward);
+        rail_out.add(out_27);
+        rail_out.add(out_45);
+        rail_out.add(out_63);
+
+        rail_on.add(on_backswap);
+        rail_on.add(on_frontswap);
+
+
+
+
 
     }
     //On crée le trick + rotation
@@ -151,6 +205,13 @@ public class Intermediaire{
             }
             return s_grab;
         }
+    public String Rail(){
+        String s_in = rail_in.get((int) (Math.random() * rail_in.size()));
+        String s_out = rail_out.get((int) (Math.random() * rail_out.size()));
+        String s_final="";
+        s_final=s_in + " "+s_out;
+        return (s_final);
+    }
 
 
 

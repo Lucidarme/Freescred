@@ -16,8 +16,11 @@ public class Expert {
     public ArrayList<String> liste_trick_exp = new ArrayList<>();
     public ArrayList<String> liste_grab_exp = new ArrayList<>();
     public ArrayList<String> liste_rotation_exp = new ArrayList<>();
+    public  ArrayList<String>rail_on= new ArrayList<>();
+    public ArrayList<String>rail_in= new ArrayList<>();
+    public ArrayList<String>rail_out= new ArrayList<>();
     private Context context;
-
+//KICK
     String trick_front;
     String trick_misty;
     String trick_back;
@@ -48,12 +51,34 @@ public class Expert {
     String grab_leadtail;
     String grab_dubnose;
 
+//RAIL
+    String in_50_50;
+    String in_onefoot;
+    String in_90;
+    String in_27;
+    String in_45;
+    String in_63;
+    String in_180;
+
+    String out_switch;
+    String out_forward;
+    String out_27;
+    String out_45;
+    String out_63;
+    String out_misty;
+
+    String on_frontswap;
+    String on_backswap;
+    String on_frontswap36;
+    String on_backswap36;
+
 
 
 
 
     public Expert(Context context) {
         this.context=context;
+        //KICK
         rot_0=context.getResources().getString(R.string.rot_0);
         rot_180=context.getResources().getString(R.string.rot_180);
         rot_360=context.getResources().getString(R.string.rot_360);
@@ -84,6 +109,26 @@ public class Expert {
         trick_droit=context.getResources().getString(R.string.trick_droit);
         trick_flat=context.getResources().getString(R.string.trick_flat);
 
+        //RAIL
+        in_90=context.getResources().getString(R.string.in_90);
+        in_180=context.getResources().getString(R.string.in_180);
+        in_27=context.getResources().getString(R.string.in_27);
+        in_45=context.getResources().getString(R.string.in_45);
+
+        out_27=context.getResources().getString(R.string.out_27);
+        out_45=context.getResources().getString(R.string.out_45);
+        out_63=context.getResources().getString(R.string.out_63);
+        out_switch=context.getResources().getString(R.string.out_switch);
+        out_forward=context.getResources().getString(R.string.out_forward);
+        out_misty=context.getResources().getString(R.string.out_misty);
+
+
+        on_backswap=context.getResources().getString(R.string.on_backswap);
+        on_backswap36=context.getResources().getString(R.string.on_backswap36);
+        on_frontswap36=context.getResources().getString(R.string.on_frontswap36);
+        on_frontswap=context.getResources().getString(R.string.on_frontswap);
+
+        //LISTE
         liste_trick_exp.add(trick_droit);
         liste_trick_exp.add(trick_back);
         liste_trick_exp.add(trick_front);
@@ -113,6 +158,23 @@ public class Expert {
         liste_grab_exp.add(grab_octo);
         liste_grab_exp.add(grab_screamin);
         liste_grab_exp.add(grab_leadtail);
+
+        rail_in.add(in_90);
+        rail_in.add(in_27);
+        rail_in.add(in_45);
+
+        rail_out.add(out_switch);
+        rail_out.add(out_forward);
+        rail_out.add(out_27);
+        rail_out.add(out_45);
+        rail_out.add(out_63);
+        rail_out.add(out_misty);
+
+        rail_on.add(on_backswap);
+        rail_on.add(on_backswap36);
+        rail_on.add(on_frontswap);
+        rail_on.add(on_backswap36);
+
 
 
 
@@ -174,5 +236,12 @@ public class Expert {
             }
         }
         return(s_grab);
+    }
+    public String Rail(){
+        String s_in = rail_in.get((int) (Math.random() * rail_in.size()));
+        String s_out = rail_out.get((int) (Math.random() * rail_out.size()));
+        String s_final="";
+        s_final=s_in + " "+s_out;
+        return (s_final);
     }
 }

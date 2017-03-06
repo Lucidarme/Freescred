@@ -20,9 +20,13 @@ public class Debutant{
     private String s_grab_memoire="";
     private String s_rota_memoire="";
     private String s_trick_memoire="";
+    private String s_rail_memoire="";
     public  ArrayList<String> liste_trick_deb= new ArrayList<>();
     public ArrayList<String> liste_grab_deb= new ArrayList<>();
     public ArrayList<String> liste_rotation_deb= new ArrayList<>();
+    public  ArrayList<String>rail_on= new ArrayList<>();
+    public ArrayList<String>rail_in= new ArrayList<>();
+    public ArrayList<String>rail_out= new ArrayList<>();
     private Context context;
 
 
@@ -36,6 +40,25 @@ public class Debutant{
     String grab_safety;
     String grab_nograb;
 
+    String in_50_50;
+    String in_onefoot;
+    String in_90;
+    String in_27;
+    String in_45;
+    String in_63;
+    String in_180;
+
+    String out_switch;
+    String out_forward;
+    String out_27;
+    String out_45;
+    String out_63;
+    String out_misty;
+
+    String on_frontswap;
+    String on_backswap;
+    String on_frontswap360;
+    String on_backswap360;
 
     public Debutant(Context context) {
         this.context=context;
@@ -47,6 +70,12 @@ public class Debutant{
         grab_japan=context.getResources().getString(R.string.grab_japan);
         grab_cossak=context.getResources().getString(R.string.grab_cossak);
         grab_safety=context.getResources().getString(R.string.grab_safety);
+        in_90=context.getResources().getString(R.string.in_90);
+        in_180=context.getResources().getString(R.string.in_180);
+        out_27=context.getResources().getString(R.string.out_27);
+        out_switch=context.getResources().getString(R.string.out_switch);
+        out_forward=context.getResources().getString(R.string.out_forward);
+
 
         // private String grab_cossak=getString(R.string.grab_cossak);
         liste_trick_deb.add("");
@@ -57,6 +86,13 @@ public class Debutant{
         liste_grab_deb.add(grab_safety);
         liste_grab_deb.add(grab_mute);
         liste_grab_deb.add(grab_japan);
+
+        rail_in.add(in_90);
+        rail_in.add(in_180);
+        rail_out.add(out_switch);
+        rail_out.add(out_forward);
+        rail_out.add(out_27);
+
 
 
 
@@ -120,7 +156,16 @@ public class Debutant{
         return s_grab;
     }
 
-
-
+    public String Rail(){
+        String s_in = rail_in.get((int) (Math.random() * rail_in.size()));
+        String s_out = rail_out.get((int) (Math.random() * rail_out.size()));
+        String s_final="";
+        s_final=s_in + " "+s_out;
+        return (s_final);
+    }
 }
+
+
+
+
 

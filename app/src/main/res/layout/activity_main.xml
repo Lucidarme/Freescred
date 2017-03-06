@@ -8,13 +8,19 @@
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:spinnerMode="dialog"
         android:id="@+id/spinner_level"
         android:entries="@array/level"
         android:prompt="@string/level_prompt"
-        android:layout_marginTop="10dp"
+        android:paddingBottom="25dp"
+        android:paddingTop="25dp"
+        android:textAlignment="center"
         />
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="8px"
+        android:background="#FF909090" />
     <android.support.design.widget.TabLayout
+
         android:id="@+id/sliding_tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
