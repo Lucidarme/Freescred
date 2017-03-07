@@ -5,20 +5,20 @@
 
 
     <Button
-        android:id="@+id/rail"
+        android:id="@+id/rail_in"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text ="Rail"
+        android:text ="Rail_in"
         android:textStyle="bold"
         android:textSize="25sp"
         android:layout_marginTop="35dp"
         android:background="#8AB5D9"/>
 
     <TextView
-        android:id="@+id/text_rail"
+        android:id="@+id/text_rail_in"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/text_rail"
+        android:text="@string/text_rail_in"
         android:layout_marginTop="20dp"
         android:gravity="center"
         android:textSize="40sp"
@@ -26,10 +26,10 @@
         />
 
     <Button
-        android:id="@+id/way_rotation"
+        android:id="@+id/rail_out"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text ="Nat/Unat"
+        android:text ="Rail_out"
         android:textStyle="bold"
         android:textSize="25sp"
         android:layout_marginTop="20dp"
@@ -38,10 +38,10 @@
 
 
     <TextView
-        android:id="@+id/text_wayrotation"
+        android:id="@+id/text_rail_out"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/text_wayrotation"
+        android:text="@string/text_rail_out"
         android:layout_marginTop="20dp"
         android:gravity="center"
         android:textSize="40sp"

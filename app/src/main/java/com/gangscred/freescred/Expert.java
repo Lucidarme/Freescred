@@ -62,9 +62,12 @@ public class Expert {
 
     String out_switch;
     String out_forward;
-    String out_27;
-    String out_45;
-    String out_63;
+    String out_27front;
+    String out_27back;
+    String out_45front;
+    String out_45back;
+    String out_63front;
+    String out_63back;
     String out_misty;
 
     String on_frontswap;
@@ -114,10 +117,14 @@ public class Expert {
         in_180=context.getResources().getString(R.string.in_180);
         in_27=context.getResources().getString(R.string.in_27);
         in_45=context.getResources().getString(R.string.in_45);
+        in_onefoot=context.getResources().getString(R.string.in_onefoot);
 
-        out_27=context.getResources().getString(R.string.out_27);
-        out_45=context.getResources().getString(R.string.out_45);
-        out_63=context.getResources().getString(R.string.out_63);
+        out_27front =context.getResources().getString(R.string.out_27front);
+        out_27back =context.getResources().getString(R.string.out_27back);
+        out_45front =context.getResources().getString(R.string.out_45front);
+        out_45back =context.getResources().getString(R.string.out_45back);
+        out_63front =context.getResources().getString(R.string.out_63front);
+        out_63back =context.getResources().getString(R.string.out_63back);
         out_switch=context.getResources().getString(R.string.out_switch);
         out_forward=context.getResources().getString(R.string.out_forward);
         out_misty=context.getResources().getString(R.string.out_misty);
@@ -162,12 +169,16 @@ public class Expert {
         rail_in.add(in_90);
         rail_in.add(in_27);
         rail_in.add(in_45);
+        rail_in.add(in_onefoot);
 
         rail_out.add(out_switch);
         rail_out.add(out_forward);
-        rail_out.add(out_27);
-        rail_out.add(out_45);
-        rail_out.add(out_63);
+        rail_out.add(out_27front);
+        rail_out.add(out_45front);
+        rail_out.add(out_63front);
+        rail_out.add(out_27back);
+        rail_out.add(out_45back);
+        rail_out.add(out_63back);
         rail_out.add(out_misty);
 
         rail_on.add(on_backswap);
@@ -237,11 +248,36 @@ public class Expert {
         }
         return(s_grab);
     }
-    public String Rail(){
+    String rail_in_mem="";
+    String rail_out_mem="";
+    public String[] Rail(){
+        String s1="";
+        String s2="";
+        String s_in_final="";
+        String s_out_final="";
         String s_in = rail_in.get((int) (Math.random() * rail_in.size()));
         String s_out = rail_out.get((int) (Math.random() * rail_out.size()));
-        String s_final="";
-        s_final=s_in + " "+s_out;
-        return (s_final);
+        while (s1!=s_in) {
+            if (rail_in_mem!=s_in) {
+                s1 = s_in;
+                rail_in_mem = s1;
+                s_in_final=s1;
+            } else {
+                s_in = rail_in.get((int) (Math.random() *rail_in.size()));
+            }
+        }
+        while (s2!=s_out) {
+            if (rail_out_mem!=s_out) {
+                s2 = s_out;
+                rail_out_mem = s2;
+                s_out_final=s2;
+            } else {
+                s_out = rail_out.get((int) (Math.random() *rail_out.size()));
+            }
+        }
+        String[] arr = new String[2];
+        arr[0] = s_in_final;
+        arr[1] = s_out_final;
+        return arr;
     }
 }

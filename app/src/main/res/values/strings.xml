@@ -2,8 +2,8 @@
     <string name="app_name">Freescred</string>
     <string name="text_trick">trick</string>
     <string name="text_grab">grab</string>
-    <string name="text_rail">rail</string>
-    <string name="text_wayrotation">Nat/Unat</string>
+    <string name="text_rail_in">rail_in</string>
+    <string name="text_rail_out">rail_out</string>
     <string name="level_prompt">Choisissez votre niveau</string>
     <!-- ROTATION -->
     <string name="rot_0">0</string>
@@ -38,7 +38,7 @@
     <string name="trick_droit"></string>
 
     <string name="in_180">180in</string>
-    <string name="in_90"></string>
+    <string name="in_90">90in</string>
     <string name="in_27">27in</string>
     <string name="in_onefoot">one foot</string>
     <string name="in_45">45in</string>
@@ -52,9 +52,13 @@
 
     <string name="out_switch">switch</string>
     <string name="out_forward">forward</string>
-    <string name="out_27">27out</string>
-    <string name="out_45">45out</string>
-    <string name="out_63">63out</string>
+    <string name="out_27back">27 back</string>
+    <string name="out_27front">27 front</string>
+    <string name="out_45back">45 back</string>
+    <string name="out_45front">45 front</string>
+    <string name="out_63back">63 back</string>
+    <string name="out_63front">63 front</string>
+
     <string name="out_misty">misty out</string>
     <string name="out_rodeo">rodeo out</string>
     <string-array name="level">

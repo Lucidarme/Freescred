@@ -17,10 +17,10 @@ public class RailFragment extends Fragment {
     Debutant Deb;
     Intermediaire Inter;
     Expert Exp;
-    Button but_rail;
-    Button but_wayrotation;
-    TextView text_rail;
-    TextView text_wayrotation;
+    Button but_rail_in;
+    Button but_rail_out;
+    TextView text_rail_in;
+    TextView text_rail_out;
 
     MainActivity myActivity = null;
 
@@ -49,33 +49,71 @@ public class RailFragment extends Fragment {
         Inter=new Intermediaire(this.getContext());
         Exp=new Expert(this.getContext());
 
-        but_rail = (Button) view.findViewById(R.id.rail);
-        text_rail = (TextView) view.findViewById(R.id.text_rail);
-        but_wayrotation=(Button) view.findViewById(R.id.way_rotation);
-        text_wayrotation= (TextView) view.findViewById(R.id.text_wayrotation);
+        but_rail_in = (Button) view.findViewById(R.id.rail_in);
+        text_rail_in = (TextView) view.findViewById(R.id.text_rail_in);
+        but_rail_out =(Button) view.findViewById(R.id.rail_out);
+        text_rail_out = (TextView) view.findViewById(R.id.text_rail_out);
 
 
-        but_rail.setOnClickListener(new View.OnClickListener() {
-            String rail_Deb;
-            String rail_Inter;
-            String rail_Exp;
+        but_rail_in.setOnClickListener(new View.OnClickListener() {
+            String rail_in_Deb;
+            String rail_in_Inter;
+            String rail_in_Exp;
+            String[] arr;
+
             @Override
             public void onClick(View v) {
 
 
                 Spinner spinner_list_level = myActivity.getSpinnerLevel();
                 if (spinner_list_level.getSelectedItem().toString().equals("Debutant")){
-                    rail_Deb=Deb.Rail();
-                    text_rail.setText(rail_Deb);
+                    arr=Deb.Rail();
+                    rail_in_Deb =arr[0];
+                    text_rail_in.setText(rail_in_Deb);
+
                 }
                 else{
                     if (spinner_list_level.getSelectedItem().toString().equals("Intermediaire")){
-                        rail_Inter=Inter.Rail();
-                        text_rail.setText(rail_Inter);
+                        arr=Inter.Rail();
+                        rail_in_Inter =arr[0];
+                        text_rail_in.setText(rail_in_Inter);
                     }
                     else{
-                        rail_Exp=Exp.Rail();
-                        text_rail.setText(rail_Exp);
+                        arr=Exp.Rail();
+                        rail_in_Exp =arr[0];
+                        text_rail_in.setText(rail_in_Exp);
+                    }
+
+                }
+
+            }
+        });
+        but_rail_out.setOnClickListener(new View.OnClickListener() {
+            String rail_out_Deb;
+            String rail_out_Inter;
+            String rail_out_Exp;
+            String[] arr;
+
+            @Override
+            public void onClick(View v) {
+
+
+                Spinner spinner_list_level = myActivity.getSpinnerLevel();
+                if (spinner_list_level.getSelectedItem().toString().equals("Debutant")){
+                    arr=Deb.Rail();
+                    rail_out_Deb=arr[1];
+                    text_rail_out.setText(rail_out_Deb);
+                }
+                else{
+                    if (spinner_list_level.getSelectedItem().toString().equals("Intermediaire")){
+                        arr=Inter.Rail();
+                        rail_out_Inter=arr[1];
+                        text_rail_out.setText(rail_out_Inter);
+                    }
+                    else{
+                        arr=Exp.Rail();
+                        rail_out_Exp=arr[1];
+                        text_rail_out.setText(rail_out_Exp);
                     }
 
                 }
