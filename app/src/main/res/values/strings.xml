@@ -2,8 +2,8 @@
     <string name="app_name">Freescred</string>
     <string name="text_trick">trick</string>
     <string name="text_grab">grab</string>
-    <string name="text_rail_in">rail_in</string>
-    <string name="text_rail_out">rail_out</string>
+    <string name="text_rail_in">in</string>
+    <string name="text_rail_out">out</string>
     <string name="level_prompt">Choisissez votre niveau</string>
     <!-- ROTATION -->
     <string name="rot_0">0</string>

@@ -5,6 +5,7 @@
 
     <Button
         android:text="Play"
+        android:background="@drawable/btn_rond"
         android:layout_marginTop="150dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -12,6 +13,7 @@
 
     <Button
         android:text="Players"
+        android:background="@drawable/btn_rond"
         android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
