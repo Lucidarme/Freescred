@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/play" />
     <View
+        android:id="@+id/barre_menu"
         android:layout_width="100dp"
         android:layout_marginTop="40dp"
         android:layout_gravity="center"
@@ -23,5 +24,5 @@
         android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/level" />
+        android:id="@+id/players" />
 </LinearLayout>
