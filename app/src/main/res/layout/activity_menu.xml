@@ -10,11 +10,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/play" />
+    <View
+        android:layout_width="100dp"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center"
+        android:layout_height="5px"
+        android:background="#000000" />
 
     <Button
         android:text="Players"
         android:background="@drawable/btn_rond"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/level" />
