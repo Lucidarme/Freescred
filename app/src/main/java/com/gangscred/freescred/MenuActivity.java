@@ -2,7 +2,9 @@ package com.gangscred.freescred;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -25,9 +27,11 @@ public class MenuActivity extends Activity{
             }
         });
         final View barre= findViewById(R.id.barre_menu);
-        hyperspaceJumpAnimation= AnimationUtils.loadAnimation(this, R.anim.hyperspace_jump);
 
+        hyperspaceJumpAnimation= AnimationUtils.loadAnimation(this, R.anim.hyperspace_jump);
         barre.startAnimation(hyperspaceJumpAnimation);
+
+
 
         findViewById(R.id.players).setOnClickListener(new View.OnClickListener() {
             @Override

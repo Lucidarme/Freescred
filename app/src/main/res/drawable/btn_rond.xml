@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     >
-    <solid android:color="#55555145"
+    <stroke android:color="#55555145"
         />
     <corners android:bottomRightRadius="450dp"
         android:bottomLeftRadius="450dp"
